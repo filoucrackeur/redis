@@ -1,0 +1,60 @@
+<f:section name="card">
+    <a class="card card-size-medium" href="">
+        <div class="card-header">
+            <div class="card-icon">
+
+                <core:icon alternativeMarkupIdentifier="inline" identifier="tx-redis-redis-logo" size="large"                            overlay="overlay-warning"
+                />
+                <core:icon alternativeMarkupIdentifier="inline" identifier="apps-filetree-root"
+                           overlay="overlay-warning"
+                           size="large"/>
+                <core:icon alternativeMarkupIdentifier="inline" identifier="status-dialog-ok" size="large"/>
+                <core:icon alternativeMarkupIdentifier="inline" identifier="status-dialog-error" size="large"/>
+                <core:icon alternativeMarkupIdentifier="inline" identifier="information-database" size="large"/>
+
+
+
+            </div>
+            <f:comment>
+                redis => protectedNULL
+                connected => protectedFALSE
+                persistentConnection => protectedFALSE
+                hostname => protected'redis' (5 chars)
+                port => protected6379 (integer)
+                database => protected2 (integer)
+                password => protected'' (0 chars)
+                compression => protectedFALSE
+                compressionLevel => protected-1 (integer)
+                connectionTimeout => protected0 (integer)
+                cache => protectedNULL
+                cacheIdentifier => protectedNULL
+                context => protected'' (0 chars)
+                defaultLifetime => protected3600 (integer)
+                logger => protectedNULL
+            </f:comment>
+            <div class="card-header-body">
+                <h3 class="card-title">{cacheConfig.hostname}</h3>
+
+                <span class="card-subtitle">Redis cache</span>
+                <div class="card-longdesc">
+                    Hostname: <code>{cacheConfig.hostname}</code><br/>
+                    Port: <code>{cacheConfig.port}</code><br/>
+                    <f:if condition="{cacheConfig.options.password}">
+                        Password: <code>*******</code><br/>
+                    </f:if>
+                    Database: <code>{cacheConfig.database}</code><br/>
+                    Expire:
+                    <f:format.date date="{cacheConfig.defaultLifetime}" format="s"/>
+                    <br/>
+                    Keys: <code>2344</code>
+                </div>
+                <div>
+                    <f:form.button class="btn btn-default">
+                        <core:icon alternativeMarkupIdentifier="inline" identifier="sysnote-type-1" size="small"/> Manage caches
+                    </f:form.button>
+                </div>
+            </div>
+        </div>
+    </a>
+
+</f:section>

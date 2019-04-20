@@ -1,0 +1,38 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers">
+
+<f:layout name="Default"/>
+
+<f:section name="content">
+
+    <div class="module">
+        <f:be.container pageTitle="ss">
+            <div class="module-loading-indicator"></div>
+
+            <div class="module-docheader">
+
+                <div class="typo3-docheader-functions">
+                    <div class="module-docheader-bar module-docheader-bar-navigation">
+                        <div class="module-docheader-bar-column-left">
+                            <f:image src="EXT:redis/Resources/Public/Images/Documentation/redis-logo-text.svg" width="200"/>
+                        </div>
+                        <div class="module-docheader-bar-column-right"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="typo3-docbody">
+                <div id="typo3-inner-docbody">
+                    <h1>Redis caching server</h1>
+
+                    <div class="card-container">
+
+                        <f:for each="{redisBackends}" as="cacheConfig">
+                            <f:render partial="RedisBackend" section="card" arguments="{_all}"/>
+                        </f:for>
+                    </div>
+                </div>
+            </div>
+        </f:be.container>
+    </div>
+</f:section>
+</html>
